@@ -12,9 +12,12 @@ export default function Home() {
       <Projects
         describe1={[
           "first we dip it first we dip it first we dip it first we dip it first we dip it first we dip it first we dip it ",
-          "then we lick it",
+          "then we lick it then we lick it then we lick it then we lick it",
         ]}
-        describe2={["then we kiss it", "then we miss it"]}
+        describe2={[
+          "then we kiss it then we kiss it then we kiss it",
+          "then we miss it then we miss it then we miss it",
+        ]}
         imgUrls={[
           "/images/pexels-joshsorenson-1714208 (2).jpg",
           "/images/pexels-kevin-ku-92347-577585.jpg",

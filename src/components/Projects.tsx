@@ -58,20 +58,20 @@ const Projects = ({
   };
 
   return (
-    <section className="flex justify-center align-middle w-xs">
-      <div>
+    <section className="flex justify-center align-middle">
+      <div className="">
         <h1 className="text-center pt-8">Projects</h1>
         <div
-          className={`md:flex ${flexFlip} justify-center align-middle border-red-900 border-2`}
+          className={`w-full md:flex ${flexFlip} justify-center align-middle border-red-900 border-2 m-0-auto`}
         >
-          <div className="w-lg border-red-900 border-2">
+          <div className="w-full md:w-1/2 border-red-900 border-2">
             <h1 className="mb-4 mx-4">{title}</h1>
-            <div className="mx-4 flex flex-wrap flex-row-reverse w-md">
+            <div className="px-5 flex flex-wrap flex-row-reverse w-full">
               {describe1?.map((item, index) => {
                 const hidden = getHiddenClass(index, showMore1);
                 return index < showMore1 ? (
                   <div
-                    className={`border-solid border-2 w-50 h-full text-wrap break-normal flex ${
+                    className={`border-solid border-2 w-1/2 h-full text-wrap break-normal flex ${
                       flexRow1[showMore1]
                     } ${showMore1 - 1 === index && "show-more-anim-right"}`}
                     key={index}
@@ -90,27 +90,26 @@ const Projects = ({
                           setTimeout(() => setIsOn(true), 10);
                           console.log(showMore1, "SHOWMORE1");
                         }}
-                        className={`bg-white text-black p-2 m-2 ${hidden}`}
+                        className={`bg-white text-black p-2 m-2 ${hidden} flex flex-row justify-center align-middle`}
                       >
                         {(index === 0 && (
-                          <ChevronDoubleLeftIcon></ChevronDoubleLeftIcon>
+                          <ChevronDoubleLeftIcon className="min-h-20 max-h-10 max-w-10"></ChevronDoubleLeftIcon>
                         )) ||
                           (index === 1 && (
-                            <ChevronDoubleDownIcon></ChevronDoubleDownIcon>
+                            <ChevronDoubleDownIcon className="max-h-10 max-w-10"></ChevronDoubleDownIcon>
                           ))}
-                        learn more
                       </button>
                     }
                   </div>
                 ) : null;
               })}
             </div>
-            <div className="mx-4 flex flex-wrap flex-row w-md border-red-900 border-2">
+            <div className="px-5 flex flex-wrap flex-row w-full">
               {describe2?.map((item, index) => {
                 const hidden = getHiddenClass(index, showMore2);
                 return index < showMore2 ? (
                   <div
-                    className={`border-solid border-2 w-50 flex ${
+                    className={`border-solid border-2 w-1/2 flex ${
                       flexRow2[showMore2]
                     } ${
                       index === 1
@@ -129,21 +128,19 @@ const Projects = ({
 
                         console.log(showMore2, "SHOWMORE2");
                       }}
-                      className={`bg-white text-black p-2 m-2 ${hidden}`}
+                      className={`bg-white text-black p-2 m-2 ${hidden} flex flex-row justify-center align-middle`}
                     >
                       {(index === 0 && (
-                        <ChevronDoubleRightIcon></ChevronDoubleRightIcon>
+                        <ChevronDoubleRightIcon className="min-h-20 max-h-10 max-w-10"></ChevronDoubleRightIcon>
                       )) ||
                         (index === 1 && (
-                          <ChevronDoubleDownIcon></ChevronDoubleDownIcon>
+                          <ChevronDoubleDownIcon className="max-h-10 max-w-10"></ChevronDoubleDownIcon>
                         ))}
-                      learn more
                     </button>
                   </div>
                 ) : null;
               })}
             </div>
-            <div className="mx-4"></div>
 
             <button
               onClick={() => {
@@ -157,26 +154,28 @@ const Projects = ({
               learn more
             </button>
           </div>
-          <div className="flex flex-wrap h-50 w-xs sm:w-md relative justify-center align-middle stack-container -skew-x-8 border-red-900 border-2">
-            {localImgUrls?.map((item, index) => (
-              <div
-                key={index}
-                className={`absolute top-0 left-0 w-full h-full mx-4 rounded-l overflow-hidden ${
-                  (index === 3 && isOn && "img-front-anim") || ""
-                }
+          <div className="flex justify-center align-middle">
+            <div className="flex flex-wrap h-50 w-[80%] sm:w-sm relative justify-center align-middle stack-container -skew-x-8 border-red-900 border-2">
+              {localImgUrls?.map((item, index) => (
+                <div
+                  key={index}
+                  className={`absolute top-0 left-0 w-full h-full rounded-l overflow-hidden ml-7 ${
+                    (index === 3 && isOn && "img-front-anim") || ""
+                  }
               ${index !== 3 && isOn && "img-back-anim"}`}
-              >
-                {localImgUrls[imgSwitch] && (
-                  <Image
-                    src={item}
-                    alt={imgAlt || "default alt text"}
-                    layout="fill"
-                    className="object-cover w-full h-full rounded-lg shadow-xl"
-                    priority
-                  />
-                )}
-              </div>
-            ))}
+                >
+                  {localImgUrls[imgSwitch] && (
+                    <Image
+                      src={item}
+                      alt={imgAlt || "default alt text"}
+                      layout="fill"
+                      className="object-cover w-full h-full rounded-lg shadow-xl"
+                      priority
+                    />
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
