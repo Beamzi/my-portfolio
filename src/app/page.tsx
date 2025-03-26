@@ -15,7 +15,7 @@ export default function Home() {
           "then we lick it then we lick it then we lick it then we lick it",
         ]}
         describe2={[
-          "then we kiss it then we kiss it then we kiss it",
+          "then we kiss it then we kiss it then we kiss it then we kiss it then we kiss it then we kiss it then we kiss it then we kiss it then we kiss it",
           "then we miss it then we miss it then we miss it",
         ]}
         imgUrls={[
