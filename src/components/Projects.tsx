@@ -59,14 +59,14 @@ const Projects = ({
   };
 
   return (
-    <section className="flex justify-center align-middle pb-20">
+    <section className="flex justify-center align-middle pb-20 overflow-hidden">
       <div className="">
         <h1 className="text-center pt-8 pb-5">Projects</h1>
         <div
           className={`w-full md:flex ${flexFlip} justify-center align-middle`}
         >
           <div className="w-full md:w-1/2 px-2">
-            <div className=" border-dashed border-1 border-neutral-600/50 py-5 md:mr-10 px-5 rounded-2xl">
+            <div className=" bg-neutral-900/50 border-dashed border-1 border-neutral-600/50 py-5 md:mr-10 px-5 rounded-2xl">
               <h1 className="mb-4">{title}</h1>
               <hr className="pb-5 w-[70%]"></hr>
               <div
